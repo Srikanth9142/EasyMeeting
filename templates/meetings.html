@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h1>Meetings  page for the EasyMeet user {{ current_user.username}}</h1>
+    <a href="{{ url_for('emailmeetings') }}">Email me meetings</button></a>
+    {% for mee in meets %}
+<!--     	<p> Title:{{ mee.title }}</p>
+    	<p>Meeting person email: -{{ mee.meet_person_email}} -->
+    	<article class="media content-section">
+          
+          <div class="media-body">
+            <div class="article-metadata">
+              <p>Meeting-Name:{{ mee.title }}</p>
+              <small class="text-muted">Person-Email: - {{ mee.meet_person_email }}</small>
+            </div>
+            <p>{{current_user.username}} you have meeting on {{ mee.date_required }} time {{mee.time}}</p>
+            <p class="article-content">{{ mee.content }}</p>
+          </div>
+        </article>
+
+    {% endfor %}
+{% endblock %}
+
+
