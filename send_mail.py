@@ -1,7 +1,7 @@
 import smtplib
 
 
-
+#This file is used to send mailing information to users
 def send_mail(meet_person,sent_person,date_meet):
 	content = "this is for testing"
 
